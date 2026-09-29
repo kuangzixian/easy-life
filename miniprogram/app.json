@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/library/index",
+    "pages/search/index",
+    "pages/cards/index",
+    "pages/detail/index",
+    "pages/about/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "好好生活",
+    "navigationBarBackgroundColor": "#F8F6EF",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F8F6EF",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#92988C",
+    "selectedColor": "#183F35",
+    "backgroundColor": "#F8F6EF",
+    "borderStyle": "white",
+    "list": [
+      { "pagePath": "pages/home/index", "text": "今天", "iconPath": "assets/tab-home.png", "selectedIconPath": "assets/tab-home-active.png" },
+      { "pagePath": "pages/library/index", "text": "慢慢读", "iconPath": "assets/tab-library.png", "selectedIconPath": "assets/tab-library-active.png" },
+      { "pagePath": "pages/search/index", "text": "问一问", "iconPath": "assets/tab-search.png", "selectedIconPath": "assets/tab-search-active.png" },
+      { "pagePath": "pages/cards/index", "text": "抽张卡", "iconPath": "assets/tab-cards.png", "selectedIconPath": "assets/tab-cards-active.png" }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

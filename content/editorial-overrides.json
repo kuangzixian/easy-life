@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "updatedAt": "2026-09-30",
+  "summary": "仅修订第 1 章第 5 条的误食蘑菇处置备注，明确不要自行催吐，并提示尽快寻求急救或医疗专业人员帮助。原始上游快照保持不变。此修订不代表全书已完成医学审校。",
+  "overrides": [
+    {
+      "entryId": "1-5",
+      "field": "notes",
+      "expectedOriginalSha256": "19debc2576c64393ab5667c8d4dcc8d3476b027c196ec448751912fd0ea5bd98",
+      "replacement": "如怀疑误食有毒蘑菇，不要自行催吐，也不要等症状出现再求助；应尽快联系急救或医疗专业人员，并在安全情况下保留蘑菇照片或样本供识别。",
+      "editorialNote": "本项目修订了原文的误食后处置备注（2026-09-30）。本条修订不代表全书已完成医学审校。",
+      "editorialSources": [
+        {
+          "title": "NSW 政府毒物信息中心：急救指引",
+          "url": "https://www.poisonsinfo.nsw.gov.au/first-aid"
+        },
+        {
+          "title": "NSW Health：野生蘑菇中毒",
+          "url": "https://www.health.nsw.gov.au/environment/factsheets/Pages/wild-mushroom-poisoning.aspx"
+        }
+      ]
+    }
+  ]
+}

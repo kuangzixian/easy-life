@@ -1,0 +1,30 @@
+.search-intro { margin-top: 44rpx; }
+.eyebrow { font-size: 18rpx; letter-spacing: 2.4rpx; }
+.page-heading { font-size: 52rpx; line-height: 1.45; margin-top: 22rpx; }
+.page-subtitle { font-size: 24rpx; }
+.search-field { display: flex; align-items: center; gap: 14rpx; padding: 14rpx 14rpx 14rpx 25rpx; margin-top: 35rpx; border: 2rpx solid #C9D1B9; border-radius: 22rpx; background: #FFFEF8; }
+.search-field input { flex: 1; min-width: 0; height: 60rpx; font-size: 25rpx; }
+.input-placeholder { color: #A0A795; font-size: 24rpx; }
+.submit-button { width: 64rpx; height: 64rpx; background: #183F35; border-radius: 15rpx; color: #DDEA9B; font-size: 36rpx; line-height: 60rpx; flex-shrink: 0; }
+.clear-button { width: 42rpx; height: 60rpx; line-height: 54rpx; font-size: 32rpx; color: #8E9884; }
+.search-explainer { display: flex; align-items: center; gap: 10rpx; margin-top: 16rpx; font-size: 20rpx; color: #8D977E; }
+.tiny-dot { width: 7rpx; height: 7rpx; border-radius: 50%; background: #93A777; }
+.section-title { font-size: 29rpx; }
+.visually-label { font-size: 17rpx; letter-spacing: 2rpx; color: #A0A791; }
+.question-row { display: flex; align-items: center; gap: 24rpx; padding: 25rpx 0; border-bottom: 1rpx solid #DFE4D4; text-align: left; font-size: 28rpx; }
+.question-row > text:nth-child(2) { flex: 1; }
+.question-number { color: #97A386; font-size: 19rpx; letter-spacing: 1rpx; }
+.question-arrow { color: #96A17F; font-size: 28rpx; }
+.topic-heading { margin-top: 38rpx; }
+.search-chips { display: flex; flex-wrap: wrap; gap: 15rpx; }
+.search-chip { padding: 12rpx 30rpx; background: #EDEFE2; border: 1rpx solid #E1E6D5; border-radius: 50rpx; color: #6F815D; font-size: 25rpx; }
+.search-footnote { display: flex; align-items: center; gap: 25rpx; margin-top: 55rpx; padding: 28rpx 24rpx; border-radius: 22rpx; background: #EFEFE4; color: #9BA58D; font-size: 23rpx; line-height: 1.8; }
+.footnote-mark { font-family: Georgia, serif; font-size: 90rpx; color: #BBC7A7; height: 70rpx; line-height: 1; }
+.results-heading { display: flex; justify-content: space-between; align-items: center; margin: 32rpx 0 24rpx; font-size: 24rpx; color: #7C8A6C; }
+.results-heading button { font-size: 22rpx; color: #839172; }
+.result-number { color: #BCC5AF; font-size: 25rpx; }
+.result-row .entry-summary { -webkit-line-clamp: 3; }
+.matched-terms { display: flex; flex-wrap: wrap; gap: 12rpx; margin-top: 16rpx; }
+.matched-terms text { background: #F0F1E6; color: #8A9679; font-size: 18rpx; padding: 3rpx 12rpx; border-radius: 6rpx; }
+.empty-action { margin-top: 32rpx; }
+.results-note { margin-top: 24rpx; }

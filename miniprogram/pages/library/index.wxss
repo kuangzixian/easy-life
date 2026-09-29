@@ -1,0 +1,26 @@
+.library-intro { margin-top: 40rpx; }
+.library-intro .eyebrow { font-size: 18rpx; letter-spacing: 2.7rpx; }
+.page-heading { font-size: 49rpx; }
+.page-subtitle { font-size: 24rpx; }
+.mode-tabs { display: flex; gap: 40rpx; border-bottom: 1rpx solid #DEE3D5; margin-top: 32rpx; }
+.mode-tab { color: #8C9584; padding: 20rpx 0; font-size: 29rpx; border-bottom: 4rpx solid transparent; margin-bottom: -2rpx; }
+.mode-tab.selected { color: #183F35; border-bottom-color: #183F35; font-weight: 600; }
+.mode-tab text { font-size: 21rpx; margin-left: 6rpx; }
+.directory-search { display: flex; align-items: center; gap: 18rpx; background: #EDEFE4; border-radius: 18rpx; padding: 15rpx 24rpx; margin-top: 28rpx; }
+.search-prefix { color: #77886C; font-size: 42rpx; line-height: 1; }
+.directory-search input { height: 56rpx; flex: 1; font-size: 25rpx; }
+.input-placeholder { color: #9AA28F; }
+.directory-meta { display: flex; justify-content: space-between; margin: 32rpx 0 8rpx; font-size: 19rpx; color: #9CA38F; letter-spacing: 1rpx; }
+.chapter-row { display: flex; align-items: center; text-align: left; gap: 24rpx; padding: 28rpx 0; border-bottom: 1rpx solid #E1E5D8; }
+.chapter-number { width: 62rpx; flex-shrink: 0; font-size: 24rpx; color: #91A07E; letter-spacing: 2rpx; }
+.chapter-copy { flex: 1; }
+.chapter-title { font-size: 31rpx; font-weight: 500; }
+.chapter-description { font-size: 21rpx; color: #949E87; margin-top: 6rpx; }
+.chapter-arrow { color: #8C9B7C; font-size: 31rpx; }
+.back-directory { text-align: left; color: #77876A; font-size: 23rpx; padding: 26rpx 0; }
+.chapter-cover { background: #E9EDDA; padding: 28rpx; border-radius: 22rpx; margin-bottom: 26rpx; }
+.chapter-cover-top { display: flex; justify-content: space-between; color: #7B8B64; font-size: 18rpx; letter-spacing: 2rpx; }
+.chapter-cover-title { margin: 24rpx 0 8rpx; font-size: 40rpx; font-weight: 600; }
+.chapter-cover-description { font-size: 25rpx; color: #758166; line-height: 1.8; }
+.favorites-intro { display: flex; justify-content: space-between; color: #89947C; font-size: 21rpx; margin: 30rpx 0; }
+.empty-action { margin-top: 28rpx; }

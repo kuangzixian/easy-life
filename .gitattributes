@@ -1,0 +1,4 @@
+* text=auto eol=lf
+# Preserve the pinned upstream snapshot, including existing blank EOF lines.
+content/upstream/** -whitespace
+*.png binary

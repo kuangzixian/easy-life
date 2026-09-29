@@ -1,0 +1,207 @@
+{
+  "title": "高性价比人生指南",
+  "author": "eternity4719 及 HowToLiveBetter 贡献者",
+  "repository": "https://github.com/eternity4719/HowToLiveBetter",
+  "commit": "e91118de217945dfb8e3561dddc74c97cc64a707",
+  "updatedAt": "2026-09-29T17:16:23+08:00",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "expectedChapters": 34,
+  "expectedEntries": 630,
+  "normalization": "UTF-8; CRLF normalized to LF; all text otherwise unchanged",
+  "bookFiles": [
+    "book/01-不要早死.md",
+    "book/02-不要慢慢死.md",
+    "book/03-不要浪费精力.md",
+    "book/04-不要浪费时间.md",
+    "book/05-不要浪费钱.md",
+    "book/06-反面清单.md",
+    "book/07-没钱的时候怎么活.md",
+    "book/08-别把自己搭进去.md",
+    "book/09-普通人容易踩的法律红线.md",
+    "book/10-恋爱和结婚划不划算.md",
+    "book/11-程序员和技术人容易踩的红线.md",
+    "book/12-创业与做生意.md",
+    "book/13-紧急情况.md",
+    "book/14-账号与信息安全.md",
+    "book/15-租房与买房.md",
+    "book/16-得了慢性病之后怎么活.md",
+    "book/17-家里有老人.md",
+    "book/18-养孩子划不划算.md",
+    "book/19-在职离职和工伤.md",
+    "book/20-刚出生的孩子怎么带.md",
+    "book/21-出国旅行与境外安全.md",
+    "book/22-怎么放松.md",
+    "book/23-学什么技能划算.md",
+    "book/24-看病.md",
+    "book/25-人走了以后要办什么.md",
+    "book/26-做一个网站或平台.md",
+    "book/27-怀孕和生产.md",
+    "book/28-别为了外形把身体搞坏.md",
+    "book/29-遭遇重大打击之后.md",
+    "book/30-上学以后的孩子.md",
+    "book/31-十八岁之后有哪几条路.md",
+    "book/32-出国留学.md",
+    "book/33-残疾之后怎么活.md",
+    "book/34-家里的常备药别吃出事.md"
+  ],
+  "files": {
+    "README.md": {
+      "sha256": "2f2f802e8f1493770d5a0a78344d73cf6b197a5370770f5eb7327c02c2d69d02",
+      "bytes": 42010
+    },
+    "LICENSE": {
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+      "bytes": 18657
+    },
+    "book/01-不要早死.md": {
+      "sha256": "72c35610773a67fa1711ac1d37c18c343dc765fd1dda7a544fc0413d5db1f7bf",
+      "bytes": 73188
+    },
+    "book/02-不要慢慢死.md": {
+      "sha256": "5e98c465613932b159eb4e0cc344c764c448a8d17f88c4c07d03367dc1634d4f",
+      "bytes": 85035
+    },
+    "book/03-不要浪费精力.md": {
+      "sha256": "604ab7c18dff8ed9ef7902ab464b76fee0a303366e988cdf097688c168e46e77",
+      "bytes": 47536
+    },
+    "book/04-不要浪费时间.md": {
+      "sha256": "a18919bc9b18ef54869c8f2ce982fd2b947aa7a0cb4b14b7557a8c54251f7b32",
+      "bytes": 29253
+    },
+    "book/05-不要浪费钱.md": {
+      "sha256": "b12d47cc81613a18265238eab5bcdd9402116825099824dbc0cbe043ccebdd2e",
+      "bytes": 109183
+    },
+    "book/06-反面清单.md": {
+      "sha256": "12dadf192c0bf8d31837e11f86dd4c4783b80bcb13c2ff15e7ef00f318b6f8e5",
+      "bytes": 70652
+    },
+    "book/07-没钱的时候怎么活.md": {
+      "sha256": "63c214527910ef4686173c0373e0a752b66245a5b216f96e352165ddf31c23f5",
+      "bytes": 51389
+    },
+    "book/08-别把自己搭进去.md": {
+      "sha256": "1ef2e1825e2d1b4b616cc3f04ed10497d2754d442b1934422dc06b5f16fb4afa",
+      "bytes": 124584
+    },
+    "book/09-普通人容易踩的法律红线.md": {
+      "sha256": "11aba66c65bd2242444b719281a345f77c0d6213eb368c74613faf02bf47e125",
+      "bytes": 66884
+    },
+    "book/10-恋爱和结婚划不划算.md": {
+      "sha256": "4defde1ccd31c6feb79c95a4ce50cd63712b41deab886cdc2c954e0229b23258",
+      "bytes": 38536
+    },
+    "book/11-程序员和技术人容易踩的红线.md": {
+      "sha256": "a9f851fcda53688981acb908b7e9ae520cb820a81a6b237d178567c0e3bb357b",
+      "bytes": 43312
+    },
+    "book/12-创业与做生意.md": {
+      "sha256": "b5b46746b1313f2c700281396e0745dedc10c6dafcfc1975b96e875166f3d923",
+      "bytes": 63836
+    },
+    "book/13-紧急情况.md": {
+      "sha256": "dd599984a602b967155e1def22c38b4a6af2020e417cffb68873876386500af6",
+      "bytes": 92972
+    },
+    "book/14-账号与信息安全.md": {
+      "sha256": "da82cc3d6b37fa8bdd5ce6ccb1be0b2d0b25ee6f2e31fe1070b3fca2d9164d0b",
+      "bytes": 16775
+    },
+    "book/15-租房与买房.md": {
+      "sha256": "abf2f0cd4820bb8062a9baa8cb975a6f74a3489af6b741d7f83354ef2166ad6a",
+      "bytes": 11100
+    },
+    "book/16-得了慢性病之后怎么活.md": {
+      "sha256": "341a5d2d2825aabe7431c44584ecb85912c9f07eee485d1a72b740a6b053d201",
+      "bytes": 19396
+    },
+    "book/17-家里有老人.md": {
+      "sha256": "0dc320a663a29bc5258f7cd1b6847eff9beb7592ee6a41b668e1da26383847d5",
+      "bytes": 19594
+    },
+    "book/18-养孩子划不划算.md": {
+      "sha256": "72ae66e46dce8993a4743d9441a59749dec46d24077f6374c0bafd44ba6ed606",
+      "bytes": 7524
+    },
+    "book/19-在职离职和工伤.md": {
+      "sha256": "f94b0a03a110cdabe23adf1a0f8a710812239901465e9b869145179a88415e6a",
+      "bytes": 35889
+    },
+    "book/20-刚出生的孩子怎么带.md": {
+      "sha256": "56d9fbd41a9d34d59b8dce122d1a5c8a0f89330d0a09c6c30da003668e122312",
+      "bytes": 22080
+    },
+    "book/21-出国旅行与境外安全.md": {
+      "sha256": "b10c7e58b9df9cc3392332e2545aa1ee9c10618f709ad642c90e5ee50e78d54d",
+      "bytes": 22192
+    },
+    "book/22-怎么放松.md": {
+      "sha256": "ed3c81bf0d66e93ca9918fcc4f71bcd79f825218c131bce69f6a3741d21ab322",
+      "bytes": 21631
+    },
+    "book/23-学什么技能划算.md": {
+      "sha256": "9054c1b68563453bbdcedd5f7b21dfed6275e5a453d4eec6a9f4816f518aeea0",
+      "bytes": 51594
+    },
+    "book/24-看病.md": {
+      "sha256": "86eb627b6690e318ce99a57e850aaf29a333374aedf8a18e255ffd3de5aa95f7",
+      "bytes": 30291
+    },
+    "book/25-人走了以后要办什么.md": {
+      "sha256": "256e3a4114fea4bc0287fcaa168da200fc218f17884cd4fd6da82d74686b79ea",
+      "bytes": 21676
+    },
+    "book/26-做一个网站或平台.md": {
+      "sha256": "0bfc844f96df45a54f2d1211badb68f521b927400f3ffd685582980c73af466a",
+      "bytes": 33071
+    },
+    "book/27-怀孕和生产.md": {
+      "sha256": "694b9a4e399e279c8e17aced423b5b53e32d16b3cf1004a4c4ea2484cc63e44f",
+      "bytes": 28771
+    },
+    "book/28-别为了外形把身体搞坏.md": {
+      "sha256": "deba0b7a505bb7d92c0007970ccd5b94073c04e3a45c1cd688b33b1231536aae",
+      "bytes": 21425
+    },
+    "book/29-遭遇重大打击之后.md": {
+      "sha256": "69172491e4a04e75d728aabfd8ff6a883c2cae290ac91032944e05e5280a7917",
+      "bytes": 33519
+    },
+    "book/30-上学以后的孩子.md": {
+      "sha256": "558a9e5c26bd51eaf7b970476cb24de8c4e1e6fc9696eecbf31e0bf2c4e1b0e8",
+      "bytes": 32170
+    },
+    "book/31-十八岁之后有哪几条路.md": {
+      "sha256": "d14e991a88db5e1897722b04d571dee7b8e4284f4f4247903109f952edf394ae",
+      "bytes": 65101
+    },
+    "book/32-出国留学.md": {
+      "sha256": "4a804908370c5a376475da4b47e2d9ed7850ac1d3a14e9201aaaa48edf3c070c",
+      "bytes": 18396
+    },
+    "book/33-残疾之后怎么活.md": {
+      "sha256": "2e35558f0d6b7097a2f9b02abe6067d998cf2ac0efed14a79b909213c73bcd03",
+      "bytes": 51473
+    },
+    "book/34-家里的常备药别吃出事.md": {
+      "sha256": "688ec3a6ce5782de8cb22da01a9db9e06bb84e9926494e34cee31d71cde52313",
+      "bytes": 20036
+    }
+  },
+  "editorialOverrides": {
+    "file": "content/editorial-overrides.json",
+    "sha256": "71c5d7872b93cf07de51b62786623674f909b3a6f74f33f289f7d696ce4dd9f3",
+    "updatedAt": "2026-09-30",
+    "summary": "仅修订第 1 章第 5 条的误食蘑菇处置备注，明确不要自行催吐，并提示尽快寻求急救或医疗专业人员帮助。原始上游快照保持不变。此修订不代表全书已完成医学审校。",
+    "patches": [
+      {
+        "entryId": "1-5",
+        "field": "notes",
+        "expectedOriginalSha256": "19debc2576c64393ab5667c8d4dcc8d3476b027c196ec448751912fd0ea5bd98"
+      }
+    ]
+  }
+}

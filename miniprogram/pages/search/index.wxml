@@ -1,0 +1,20 @@
+<view class="page search-page" style="padding-top: {{statusBarHeight}}px;">
+  <view class="nav" style="height: {{navHeight}}px;"><view class="brand-mark"></view><text class="brand">好好生活 · 找答案</text></view>
+  <view class="search-intro"><view class="eyebrow">A GOOD QUESTION IS A START</view><view class="page-heading"><view>生活里的问号，</view><view>一起找找答案。</view></view><view class="page-subtitle">输入一个问题，找到原文中相关的建议。</view></view>
+  <view class="search-field"><input value="{{query}}" bindinput="onInput" bindconfirm="submit" placeholder="例如：总是熬夜，怎么改善睡眠？" placeholder-class="input-placeholder" confirm-type="search" maxlength="100" aria-label="搜索生活建议"/><button wx:if="{{query}}" class="clear-button" bindtap="clear" aria-label="清空搜索">×</button><button class="submit-button" bindtap="submit" aria-label="搜索">↗</button></view>
+  <view class="search-explainer"><view class="tiny-dot"></view><text>免费原文检索 · 每条结果都有出处</text></view>
+  <block wx:if="{{!hasSearched}}">
+    <view class="section-heading"><text class="section-title">从这些小问题开始</text><text class="visually-label">TRY ASKING</text></view>
+    <button wx:for="{{questions}}" wx:key="*this" class="question-row" bindtap="chooseQuestion" data-query="{{item}}"><view class="question-number">0{{index + 1}}</view><text>{{item}}</text><text class="question-arrow">↗</text></button>
+    <view class="section-heading topic-heading"><text class="section-title">或找一个关键词</text></view>
+    <view class="search-chips"><button wx:for="{{chips}}" wx:key="*this" class="search-chip" bindtap="chooseQuestion" data-query="{{item}}">{{item}}</button></view>
+    <view class="search-footnote"><text class="footnote-mark">“</text><view><view>不必一次解决所有问题。</view><view>找到一个小小的方向，也很好。</view></view></view>
+  </block>
+  <block wx:else>
+    <view class="results-heading"><text>{{searching ? '正在寻找相关建议…' : '找到 ' + results.length + ' 条相关建议'}}</text><button bindtap="clear">重新找找</button></view>
+    <view wx:for="{{results}}" wx:key="id" class="entry-row result-row tap" bindtap="openEntry" data-id="{{item.id}}" aria-role="button"><view class="entry-meta"><text>{{item.chapterLabel}} · 建议 {{item.codeLabel}}</text><text class="result-number">{{index + 1 &lt; 10 ? '0' : ''}}{{index + 1}}</text></view><view class="entry-title">{{item.title}}</view><view class="entry-summary">{{item.summaryText}}</view><view wx:if="{{item.matchedTerms.length}}" class="matched-terms"><text wx:for="{{item.matchedTerms}}" wx:for-item="term" wx:key="*this">{{term}}</text></view><view class="entry-footer"><text>来自 HowToLiveBetter</text><text>阅读原文与出处 ↗</text></view></view>
+    <view wx:if="{{!searching &amp;&amp; !results.length}}" class="empty"><view class="empty-symbol">⌕</view><view class="empty-title">这次还没找到合适的建议</view><view class="empty-copy"><view>试试更具体的关键词，例如「睡眠」</view><view>「跑步」或「学习」，也可以直接翻翻目录。</view></view><button class="secondary-button empty-action" bindtap="openLibrary">去看看全部章节</button></view>
+    <view class="small-note results-note">检索会匹配问题中的关键词与相关主题。结果来自原项目内容，未经个性化判断；请结合原文与自己的情况阅读。</view>
+  </block>
+  <view class="footer-line">STAY CURIOUS, LIVE GENTLY</view>
+</view>

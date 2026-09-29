@@ -1,0 +1,48 @@
+.cards-intro { display: flex; align-items: center; justify-content: space-between; margin-top: 36rpx; }
+.eyebrow { font-size: 17rpx; letter-spacing: 2.3rpx; }
+.page-heading { font-size: 42rpx; margin-bottom: 8rpx; letter-spacing: -1rpx; }
+.intro-spark { font-size: 68rpx; color: #8CA26B; padding-left: 10rpx; }
+.page-subtitle { font-size: 24rpx; }
+.category-scroll { width: calc(100% + 40rpx); margin-top: 28rpx; margin-bottom: 28rpx; }
+.category-list { display: inline-flex; gap: 14rpx; padding-right: 40rpx; }
+.category-chip { white-space: nowrap; background: #EBEEE0; border: 1rpx solid #E0E5D3; padding: 10rpx 23rpx; border-radius: 50rpx; color: #849171; font-size: 22rpx; }
+.category-chip.active { background: #183F35; color: #F4F7E9; border-color: #183F35; }
+.cards-swiper { width: calc(100% + 20rpx); height: 720rpx; }
+.inspiration-card { margin-right: 12rpx; height: 714rpx; padding: 34rpx; display: flex; flex-direction: column; background: #183F35; color: #F3F6E7; border-radius: 29rpx; overflow: hidden; }
+.card-top { display: flex; justify-content: space-between; align-items: center; color: #B6C4A0; font-size: 20rpx; gap: 20rpx; }
+.card-category { max-width: 410rpx; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.card-index { white-space: nowrap; font-size: 18rpx; letter-spacing: 2rpx; }
+.quote-mark { font-family: Georgia, serif; font-size: 94rpx; line-height: 1; height: 46rpx; flex-shrink: 0; color: #C6D992; margin-top: 18rpx; }
+.card-title { font-size: 34rpx; font-weight: 500; line-height: 1.5; letter-spacing: .7rpx; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
+.card-divider { height: 1rpx; flex-shrink: 0; background: rgba(223, 235, 187, .22); margin: 21rpx 0 19rpx; }
+.card-summary { font-size: 24rpx; line-height: 1.75; color: #CAD5BA; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; overflow: hidden; }
+.card-bottom { display: flex; flex-shrink: 0; justify-content: space-between; align-items: flex-end; margin-top: auto; padding-top: 16rpx; }
+.card-source { font-size: 17rpx; color: #A4B38F; letter-spacing: 1rpx; }
+.card-rating { font-size: 18rpx; color: #8CA27C; margin-top: 7rpx; }
+.card-spark { color: #DDEA9B; font-size: 47rpx; line-height: 1; }
+.card-light { background: #E7ECB5; color: #284731; }
+.card-light .card-top, .card-light .card-source { color: #788954; }
+.card-light .quote-mark, .card-light .card-spark { color: #71833E; }
+.card-light .card-divider { background: rgba(69, 96, 40, .16); }
+.card-light .card-summary { color: #617143; }
+.card-light .card-rating { color: #8B9B6E; }
+.card-sage { background: #DCE5D6; color: #294637; }
+.card-sage .card-top, .card-sage .card-source { color: #789071; }
+.card-sage .quote-mark, .card-sage .card-spark { color: #8FA380; }
+.card-sage .card-divider { background: rgba(69, 96, 40, .16); }
+.card-sage .card-summary { color: #637C5B; }
+.card-sage .card-rating { color: #85967C; }
+.swipe-guide { display: flex; align-items: center; justify-content: space-between; margin-top: 16rpx; color: #A2AA96; font-size: 18rpx; }
+.card-navigation { display: flex; align-items: center; gap: 11rpx; }
+.card-step { width: 46rpx; height: 46rpx; line-height: 39rpx; border: 1rpx solid #DDE3D0; border-radius: 50%; color: #738B5D; font-size: 33rpx; }
+.card-step[disabled] { opacity: .4; background: transparent !important; }
+.page-dots { display: flex; align-items: center; gap: 9rpx; }
+.page-dot { width: 8rpx; height: 8rpx; border-radius: 9rpx; background: #D6DECB; }
+.page-dot.active { width: 23rpx; background: #6F895C; }
+.card-actions { display: flex; align-items: center; justify-content: space-around; margin-top: 26rpx; padding: 15rpx 0; }
+.card-action { display: flex; align-items: center; justify-content: center; gap: 10rpx; font-size: 23rpx; color: #7F8D73; min-width: 130rpx; }
+.card-action text { font-size: 32rpx; }
+.card-action.is-favorite { color: #637D3D; }
+.draw-button { margin-top: 20rpx; font-size: 27rpx; }
+.shuffle-symbol { display: inline-block; font-size: 31rpx; margin-right: 15rpx; }
+.cards-note { text-align: center; color: #9AA18F; line-height: 1.8; font-size: 20rpx; margin-top: 23rpx; }

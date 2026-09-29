@@ -1,0 +1,21 @@
+<view class="page detail-page" style="padding-top: {{statusBarHeight}}px;">
+  <view class="nav" style="height: {{navHeight}}px;"><button class="nav-back" bindtap="back" aria-label="返回">‹</button><text class="nav-label">慢慢读</text></view>
+  <view wx:if="{{notFound}}" class="empty"><view class="empty-symbol">…</view><view class="empty-title">这条建议没有找到</view><view class="empty-copy">它可能已经调整，回到目录继续读读吧。</view><button class="secondary-button not-found-button" bindtap="back">返回</button></view>
+  <block wx:if="{{entry}}">
+    <button class="chapter-breadcrumb" bindtap="openChapter">{{entry.chapterLabel}} <text>↗</text></button>
+    <view class="article-number">LIFE NOTE / {{entry.codeLabel}}</view>
+    <view class="article-title"><text selectable>{{entry.title}}</text></view>
+    <view class="article-meta"><text class="rating-pill" wx:if="{{entry.evidenceText}}">原文评级 {{entry.evidenceText}}</text><text>HowToLiveBetter</text></view>
+    <view class="article-lead"><text selectable>{{entry.summaryText}}</text></view>
+    <view wx:if="{{entry.editorialNote}}" class="editorial-note"><view class="editorial-heading">编辑修订</view><text selectable>{{entry.editorialNote}}</text><button wx:for="{{entry.editorialSources}}" wx:key="url" class="editorial-source" bindtap="copyLink" data-url="{{item.url}}">{{item.title}} <text>复制链接 ↗</text></button></view>
+    <view wx:if="{{entry.costText}}" class="article-section"><view class="article-section-heading"><text class="section-index">01</text><text>需要付出什么</text><text class="section-english">COST</text></view><text class="article-body" selectable>{{entry.costText}}</text></view>
+    <view wx:if="{{entry.benefitText}}" class="article-section"><view class="article-section-heading"><text class="section-index">02</text><text>可能带来的帮助</text><text class="section-english">BENEFIT</text></view><text class="article-body" selectable>{{entry.benefitText}}</text></view>
+    <view wx:if="{{entry.notesText}}" class="notes-block"><view class="notes-title">也请留意</view><text selectable>{{entry.notesText}}</text></view>
+    <view class="source-section"><view class="source-heading"><text>研究与资料出处</text><text class="source-heading-en">SOURCES</text></view><view class="source-help">点按复制链接，可粘贴到浏览器查看。</view><button wx:for="{{entry.sources}}" wx:key="url" class="reference-row" bindtap="copyLink" data-url="{{item.url}}"><text class="reference-number">{{index + 1}}</text><text class="reference-title">{{item.title}}</text><text class="reference-copy">↗</text></button><button wx:if="{{entry.sourceBody}}" class="source-toggle" bindtap="toggleSources">{{sourceExpanded ? '收起完整来源文字 −' : '展开完整来源文字 + '}}</button><text wx:if="{{sourceExpanded}}" class="source-fulltext" selectable>{{entry.sourceBody}}</text><button class="original-link" bindtap="copyLink" data-url="{{entry.sourceUrl}}"><view><view>查看原项目中的这条建议</view><view class="original-link-caption">HowToLiveBetter · 固定版本原文</view></view><text>复制 ↗</text></button></view>
+    <view class="reading-notice">评级沿用原项目，未经本小程序独立认证。本文供阅读参考；涉及医疗、法律或财务决策时，请核对最新权威资料并咨询相应专业人士。</view>
+    <view class="article-actions"><button class="article-action {{favorite ? 'saved' : ''}}" bindtap="toggleFavorite"><text>{{favorite ? '★' : '☆'}}</text>{{favorite ? '已收藏这条建议' : '收藏这条建议'}}</button><button class="article-action share-action" open-type="share"><text>↑</text>分享</button></view>
+    <view class="article-pagination"><button class="pagination-item" bindtap="navigateEntry" data-id="{{previous ? previous.id : ''}}" disabled="{{!previous}}"><text class="pagination-direction">← 上一条</text><text class="pagination-title">{{previous ? previous.title : '已经是第一条'}}</text></button><button class="pagination-item next" bindtap="navigateEntry" data-id="{{next ? next.id : ''}}" disabled="{{!next}}"><text class="pagination-direction">下一条 →</text><text class="pagination-title">{{next ? next.title : '你已读到最后一条'}}</text></button></view>
+    <button class="attribution-link" bindtap="openAbout">内容署名、许可与隐私说明 ↗</button>
+    <view class="footer-line">TAKE WHAT HELPS, GO GENTLY</view>
+  </block>
+</view>

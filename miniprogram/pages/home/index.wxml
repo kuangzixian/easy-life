@@ -1,0 +1,22 @@
+<view class="page home-page" style="padding-top: {{statusBarHeight}}px;">
+  <view class="nav" style="height: {{navHeight}}px;"><view class="brand-mark"></view><text class="brand">好好生活</text></view>
+  <view class="greeting-row"><view><view class="eyebrow">A LITTLE BETTER, EVERY DAY</view><view class="page-heading">生活，可以慢慢变好。</view></view><view class="date-stamp"><text class="date-numbers">{{dateLabel}}</text><text class="date-day">{{dayLabel}}</text></view></view>
+  <view class="page-subtitle">从一件小事开始，找到适合自己的生活方式。</view>
+  <view wx:if="{{daily}}" class="daily-card tap" bindtap="openDaily" aria-role="button" aria-label="阅读今日建议">
+    <view class="daily-top"><text class="daily-eyebrow">TODAY’S LITTLE INSPIRATION</text><view class="daily-spark">✳</view></view>
+    <view class="daily-category">今日建议 · {{daily.chapterLabel}}</view>
+    <view class="daily-title">{{daily.title}}</view>
+    <view class="daily-summary">{{daily.coverSummary}}</view>
+    <view class="daily-bottom"><text>读一读，也许有启发</text><view class="daily-arrow">↗</view></view>
+    <view class="orbit orbit-one"></view><view class="orbit orbit-two"></view>
+  </view>
+  <button class="reading-card" bindtap="read">
+    <view class="reading-icon"><view></view><view></view></view>
+    <view class="reading-copy"><view class="reading-title">{{progress ? '接着上次，慢慢读' : '从第一页，认识更好的生活'}}</view><view class="reading-subtitle">{{progress ? progress.title : '一份开源的生活指南，按章节完整阅读'}}</view></view><text class="arrow">→</text>
+  </button>
+  <view class="section-heading"><text class="section-title">你想从哪里开始？</text><button class="quiet-link" bindtap="openLibrary">全部主题 ↗</button></view>
+  <view class="topic-grid"><button wx:for="{{chapters}}" wx:key="id" class="topic-card" bindtap="openChapter" data-id="{{item.id}}"><text class="topic-number">{{index + 1 &lt; 10 ? '0' : ''}}{{index + 1}}</text><view class="topic-title">{{item.title}}</view><view class="topic-bottom"><text>{{item.count}} 条建议</text><text>↗</text></view></button></view>
+  <button class="search-invite" bindtap="openSearch"><text class="search-ring"></text><text>带着一个生活问题，来找找答案</text><text class="arrow">→</text></button>
+  <view class="source-note"><text>源于开源项目 HowToLiveBetter</text><button bindtap="openAbout">关于与来源 ↗</button></view>
+  <view class="footer-line">LESS PRESSURE, MORE LIFE</view>
+</view>

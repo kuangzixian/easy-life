@@ -1,0 +1,16 @@
+node_modules/
+.DS_Store
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+project.private.config.json
+project.local.config.json
+miniprogram/project.private.config.json
+output/
+.playwright-cli/
+.cache/
+coverage/
+*.log
