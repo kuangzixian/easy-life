@@ -1,5 +1,5 @@
 <view class="page cards-page" style="padding-top: {{statusBarHeight}}px;">
-  <view class="nav" style="height: {{navHeight}}px;"><view class="brand-mark"></view><text class="brand">好好生活 · 灵感卡</text></view>
+  <view class="nav" style="height: {{navHeight}}px;"><view class="brand-mark"></view><text class="brand">匡子闲学 · 灵感卡</text></view>
   <view class="cards-intro"><view><view class="eyebrow">A SMALL IDEA, A FRESH START</view><view class="page-heading">给生活，一点新灵感。</view></view><text class="intro-spark">✳</text></view>
   <view class="page-subtitle">随手翻一张，有共鸣的就留下。</view>
   <scroll-view class="category-scroll" scroll-x enhanced show-scrollbar="{{false}}"><view class="category-list"><button class="category-chip {{chapterId === 0 ? 'active' : ''}}" bindtap="selectChapter" data-id="0">随便看看</button><button wx:for="{{chapters}}" wx:key="id" class="category-chip {{chapterId === item.id ? 'active' : ''}}" bindtap="selectChapter" data-id="{{item.id}}">{{item.title}}</button></view></scroll-view>

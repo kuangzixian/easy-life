@@ -1,5 +1,5 @@
 <view class="page search-page" style="padding-top: {{statusBarHeight}}px;">
-  <view class="nav" style="height: {{navHeight}}px;"><view class="brand-mark"></view><text class="brand">好好生活 · 找答案</text></view>
+  <view class="nav" style="height: {{navHeight}}px;"><view class="brand-mark"></view><text class="brand">匡子闲学 · 找答案</text></view>
   <view class="search-intro"><view class="eyebrow">A GOOD QUESTION IS A START</view><view class="page-heading"><view>生活里的问号，</view><view>一起找找答案。</view></view><view class="page-subtitle">输入一个问题，找到原文中相关的建议。</view></view>
   <view class="search-field"><input value="{{query}}" bindinput="onInput" bindconfirm="submit" placeholder="例如：总是熬夜，怎么改善睡眠？" placeholder-class="input-placeholder" confirm-type="search" maxlength="100" aria-label="搜索生活建议"/><button wx:if="{{query}}" class="clear-button" bindtap="clear" aria-label="清空搜索">×</button><button class="submit-button" bindtap="submit" aria-label="搜索">↗</button></view>
   <view class="search-explainer"><view class="tiny-dot"></view><text>免费原文检索 · 每条结果都有出处</text></view>

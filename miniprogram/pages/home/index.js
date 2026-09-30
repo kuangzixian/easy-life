@@ -22,5 +22,5 @@ Page({
   openLibrary() { getApp().globalData.libraryChapterId = 'all'; wx.switchTab({ url: '/pages/library/index' }); },
   openSearch() { wx.switchTab({ url: '/pages/search/index' }); },
   openAbout() { wx.navigateTo({ url: '/pages/about/index' }); },
-  onShareAppMessage() { return { title: '好好生活 · 每天一个小改变', path: '/pages/home/index' }; }
+  onShareAppMessage() { return { title: '匡子闲学 · 每天一个小改变', path: '/pages/home/index' }; }
 });

@@ -43,5 +43,5 @@ Page({
   },
   showChapters() { this.setData({ selectedChapter: null, filter: '', visibleChapters: this.data.chapters }); },
   openEntry(event) { openEntry(event.currentTarget.dataset.id); },
-  onShareAppMessage() { return { title: '好好生活 · 按章节读一份生活指南', path: '/pages/library/index' }; }
+  onShareAppMessage() { return { title: '匡子闲学 · 按章节读一份生活指南', path: '/pages/library/index' }; }
 });

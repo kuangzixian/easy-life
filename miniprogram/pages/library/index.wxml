@@ -1,6 +1,6 @@
 <view class="page library-page" style="padding-top: {{statusBarHeight}}px;">
-  <view class="nav" style="height: {{navHeight}}px;"><view class="brand-mark"></view><text class="brand">好好生活 · 阅读</text></view>
-  <view class="library-intro"><view class="eyebrow">A GUIDE TO EVERYDAY LIFE</view><view class="page-heading">慢慢读，好好生活。</view><view class="page-subtitle">{{chapters.length}} 个主题，{{totalCount}} 条建议。按自己的节奏来。</view></view>
+  <view class="nav" style="height: {{navHeight}}px;"><view class="brand-mark"></view><text class="brand">匡子闲学 · 阅读</text></view>
+  <view class="library-intro"><view class="eyebrow">A GUIDE TO EVERYDAY LIFE</view><view class="page-heading">慢慢读，闲时学。</view><view class="page-subtitle">{{chapters.length}} 个主题，{{totalCount}} 条建议。按自己的节奏来。</view></view>
   <view class="mode-tabs"><button class="mode-tab {{mode === 'chapters' ? 'selected' : ''}}" data-mode="chapters" bindtap="changeMode">全部章节</button><button class="mode-tab {{mode === 'favorites' ? 'selected' : ''}}" data-mode="favorites" bindtap="changeMode">我的收藏 <text>{{favoriteCount}}</text></button></view>
   <block wx:if="{{mode === 'chapters' &amp;&amp; !selectedChapter}}">
     <view class="directory-search"><text class="search-prefix">⌕</text><input placeholder="找一个感兴趣的主题" placeholder-class="input-placeholder" value="{{filter}}" bindinput="filterChapters" aria-label="筛选章节" /></view>

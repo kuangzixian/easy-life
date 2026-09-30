@@ -22,5 +22,5 @@ Page({
   },
   openEntry(event) { openEntry(event.currentTarget.dataset.id); },
   openLibrary() { getApp().globalData.libraryChapterId = 'all'; wx.switchTab({ url: '/pages/library/index' }); },
-  onShareAppMessage() { return { title: '好好生活 · 让生活问题有出处可循', path: '/pages/search/index' }; }
+  onShareAppMessage() { return { title: '匡子闲学 · 让生活问题有出处可循', path: '/pages/search/index' }; }
 });

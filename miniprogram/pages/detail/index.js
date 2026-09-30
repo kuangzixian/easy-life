@@ -38,6 +38,6 @@ Page({
   openAbout() { wx.navigateTo({ url: '/pages/about/index' }); },
   onShareAppMessage() {
     const entry = this.data.entry;
-    return entry ? { title: `好好生活 · ${entry.title}`, path: `/pages/detail/index?id=${encodeURIComponent(entry.id)}` } : { title: '好好生活 · 每天一个小改变', path: '/pages/home/index' };
+    return entry ? { title: `匡子闲学 · ${entry.title}`, path: `/pages/detail/index?id=${encodeURIComponent(entry.id)}` } : { title: '匡子闲学 · 每天一个小改变', path: '/pages/home/index' };
   }
 });

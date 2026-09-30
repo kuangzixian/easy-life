@@ -1,9 +1,9 @@
 {
-  "description": "好好生活：阅读、问句检索和人生建议卡片",
+  "description": "匡子闲学：阅读、问句检索和人生建议卡片",
   "miniprogramRoot": "miniprogram/",
   "compileType": "miniprogram",
   "appid": "touristappid",
-  "projectname": "easy-life",
+  "projectname": "匡子闲学",
   "libVersion": "3.6.5",
   "setting": {
     "es6": true,

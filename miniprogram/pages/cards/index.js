@@ -48,6 +48,6 @@ Page({
   openCurrent() { const current = this.data.cards[this.data.current]; if (current) openEntry(current.id); },
   onShareAppMessage() {
     const entry = this.data.cards[this.data.current];
-    return entry ? { title: `好好生活 · ${entry.title}`, path: `/pages/detail/index?id=${encodeURIComponent(entry.id)}` } : { title: '好好生活 · 抽几张生活灵感', path: '/pages/cards/index' };
+    return entry ? { title: `匡子闲学 · ${entry.title}`, path: `/pages/detail/index?id=${encodeURIComponent(entry.id)}` } : { title: '匡子闲学 · 抽几张生活灵感', path: '/pages/cards/index' };
   }
 });
