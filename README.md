@@ -41,13 +41,15 @@ npm run preview
 
 1. 根据 [首次发布指南](docs/WECHAT-LAUNCH.md) 注册自己的小程序，取得 AppID。
 2. 从[微信官网](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)安装开发者工具。
-3. 配置 AppID（公开标识，不是 AppSecret）：
+3. 在本机配置 AppID（应用标识，不是 AppSecret）：
 
    ```sh
    npm run configure -- wx0123456789abcdef
    ```
 
-   这里的示例必须换成自己的真实值。也可在工具导入时填写。当前默认 `touristappid` 仅供本地游客试用，不具备上传资格。
+   这里的示例必须换成自己的真实值。脚本仅写入被 Git 忽略的 `project.private.config.json`，不会修改公开仓库中的 `project.config.json`。微信开发者工具优先读取私有配置中的 AppID；后续可在本机私有文件中修改，不必发到聊天或 GitHub。
+
+   公共配置始终保留 `touristappid`，仅供本地游客试用，不具备上传资格。AppSecret、上传私钥和其他凭证不得写入小程序代码或公开仓库。
 
 4. 导入**仓库根目录**，由 `project.config.json` 自动识别 `miniprogram/`。不用创建云开发环境，不用构建 npm。
 5. 点击编译、检查控制台，再预览到手机。首发至少在 iOS 和 Android 各验收一次。

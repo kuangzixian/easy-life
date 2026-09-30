@@ -51,6 +51,8 @@ console.log(`原生页面与事件检查通过；${book.chapters.length} 章 / $
 console.log('此检查不替代微信开发者工具编译、平台实际包大小校验和真机测试。');
 if (process.argv.includes('--release')) {
   const project = JSON.parse(fs.readFileSync(path.join(root, 'project.config.json'), 'utf8'));
+  const privatePath = path.join(root, 'project.private.config.json');
+  if (fs.existsSync(privatePath)) Object.assign(project, JSON.parse(fs.readFileSync(privatePath, 'utf8')));
   const release = require(path.join(mini, 'config/release.js'));
   assert(/^wx[0-9a-f]{16}$/.test(project.appid), '发布前必须配置真实 AppID');
   for (const key of ['name', 'operator', 'contact', 'filingNumber']) assert(release[key] && release[key].trim(), `发布资料尚未填写: ${key}`);

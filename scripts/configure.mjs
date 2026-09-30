@@ -8,8 +8,8 @@ if (!/^wx[0-9a-f]{16}$/.test(appid || '')) {
   console.error('用法：npm run configure -- wx0123456789abcdef（填写微信公众平台中的真实 AppID，不是 AppSecret）');
   process.exit(1);
 }
-const target = path.join(root, 'project.config.json');
-const config = JSON.parse(fs.readFileSync(target, 'utf8'));
+const target = path.join(root, 'project.private.config.json');
+const config = fs.existsSync(target) ? JSON.parse(fs.readFileSync(target, 'utf8')) : {};
 config.appid = appid;
 fs.writeFileSync(target, JSON.stringify(config, null, 2) + '\n');
-console.log('已配置 AppID。请用微信开发者工具重新导入项目根目录。AppID 是公开标识，不是密钥。');
+console.log('AppID 已写入仅限本机的 project.private.config.json（Git 已忽略），公共配置未修改。请用微信开发者工具重新导入项目根目录。');
