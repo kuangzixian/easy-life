@@ -1,15 +1,15 @@
 {
   "status": "draft-awaiting-wechat-name-check",
-  "name": "今天也学着生活",
-  "shortName": "学着生活",
+  "name": "青芽日子簿",
+  "shortName": "青芽日子簿",
   "alternatives": [
     [
-      "翻一张生活纸条",
-      "生活纸条"
+      "日子补丁簿",
+      "日子补丁簿"
     ],
     [
-      "日子有解手册",
-      "日子有解"
+      "日常小修所",
+      "日常小修所"
     ]
   ],
   "introduction": "把生活资料整理成随手可读的卡片，支持按章节阅读、关键词检索、随机翻阅和本地收藏。内容标注出处，阅读进度保存在本机。",
@@ -23,6 +23,7 @@
     "prompt": "Use case: logo-brand. Asset type: a finished square avatar for a Chinese WeChat mini-program offering offline reading, sourced life tips, keyword search and swipeable advice cards. Create ONE polished, memorable editorial illustration icon. A small open handbook is the central motif; its two bold cream pages curve gently upward like growing leaves, with a single soft lime-yellow sun rising between them. Make the silhouette warm, intelligent, calm and friendly, not childish. Solid deep forest green background #183F35; ivory pages #F8F6EF and muted lime accent #DDEA9B. A tasteful paper-cut illustration with very restrained organic ink texture, mostly flat bold shapes and exceptionally clean edges. One centered compact composition, strong readable silhouette at 144px. All important shapes fit within the center 70% for both circular and rounded-square cropping. Full-bleed square background, no pre-rounded outside corners. No text, no letters, no numbers, no watermark, no frame, no interface, no mockup, no extra objects, no tiny details. Deliver one square PNG, ideally less than 2MB."
   },
   "notes": [
+    "用户已反馈好好生活、今天也学着生活、学着生活与已有账号名称冲突，停止采用。",
     "名称可用性须在微信后台检查；本文件不表示名称已获批准。",
     "简称按全名字符原有顺序选取。",
     "头像用于微信后台上传，不放入小程序代码包。",
