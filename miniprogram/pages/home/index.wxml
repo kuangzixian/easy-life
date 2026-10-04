@@ -17,6 +17,6 @@
   <view class="section-heading"><text class="section-title">你想从哪里开始？</text><button class="quiet-link" bindtap="openLibrary">全部主题 ↗</button></view>
   <view class="topic-grid"><button wx:for="{{chapters}}" wx:key="id" class="topic-card" bindtap="openChapter" data-id="{{item.id}}"><text class="topic-number">{{index + 1 < 10 ? '0' : ''}}{{index + 1}}</text><view class="topic-title">{{item.title}}</view><view class="topic-bottom"><text>{{item.count}} 条建议</text><text>↗</text></view></button></view>
   <button class="search-invite" bindtap="openSearch"><text class="search-ring"></text><text>带着一个生活问题，来找找答案</text><text class="arrow">→</text></button>
-  <view class="source-note"><text>源于开源项目 HowToLiveBetter</text><button bindtap="openAbout">关于与来源 ↗</button></view>
+  <view class="source-note"><text>内容来自《{{meta.title}}》</text><text class="source-license">HowToLiveBetter · {{meta.license}}</text><button size="mini" bindtap="openAbout">内容来源与许可 ↗</button></view>
   <view class="footer-line">LESS PRESSURE, MORE LIFE</view>
 </view>

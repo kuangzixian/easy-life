@@ -31,6 +31,7 @@
 .search-invite > text:nth-child(2) { flex: 1; }
 .search-ring { width: 23rpx; height: 23rpx; border: 2rpx solid #798B6A; border-radius: 50%; position: relative; margin-right: 4rpx; }
 .search-ring::after { content: ''; width: 10rpx; height: 2rpx; background: #798B6A; position: absolute; right: -7rpx; bottom: -3rpx; transform: rotate(45deg); }
-.source-note { display: flex; align-items: center; justify-content: space-between; margin-top: 30rpx; color: #959B8C; font-size: 19rpx; }
-.source-note button { font-size: 19rpx; color: #7B896D; }
+.source-note { display: flex; flex-direction: column; align-items: center; gap: 8rpx; margin-top: 30rpx; color: #959B8C; font-size: 19rpx; text-align: center; }
+.source-license { font-size: 18rpx; }
+.source-note button { width: auto; min-width: 0; margin: 0; padding: 6rpx 12rpx; font-size: 19rpx; color: #7B896D; }
 .footer-line { margin-top: 26rpx; }
