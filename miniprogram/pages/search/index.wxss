@@ -5,8 +5,11 @@
 .search-field { display: flex; align-items: center; gap: 14rpx; padding: 14rpx 14rpx 14rpx 25rpx; margin-top: 35rpx; border: 2rpx solid #C9D1B9; border-radius: 22rpx; background: #FFFEF8; }
 .search-field input { flex: 1; min-width: 0; height: 60rpx; font-size: 25rpx; }
 .input-placeholder { color: #A0A795; font-size: 24rpx; }
-.submit-button { width: 64rpx; height: 64rpx; background: #183F35; border-radius: 15rpx; color: #DDEA9B; font-size: 36rpx; line-height: 60rpx; flex-shrink: 0; }
-.clear-button { width: 42rpx; height: 60rpx; line-height: 54rpx; font-size: 32rpx; color: #8E9884; }
+.search-field .submit-button { display: flex; align-items: center; justify-content: center; flex: 0 0 56rpx; width: 56rpx; min-width: 56rpx; max-width: 56rpx; height: 56rpx; margin: 0; padding: 0; background: #183F35; border-radius: 14rpx; color: #DDEA9B; line-height: 1; }
+.search-icon { position: relative; width: 32rpx; height: 32rpx; }
+.search-icon::before { content: ''; position: absolute; top: 2rpx; left: 2rpx; width: 22rpx; height: 22rpx; box-sizing: border-box; border: 3rpx solid currentColor; border-radius: 50%; }
+.search-icon::after { content: ''; position: absolute; top: 21rpx; left: 21rpx; width: 12rpx; height: 3rpx; border-radius: 3rpx; background: currentColor; transform: rotate(45deg); transform-origin: left center; }
+.search-field .clear-button { display: flex; align-items: center; justify-content: center; flex: 0 0 40rpx; width: 40rpx; min-width: 40rpx; max-width: 40rpx; height: 56rpx; margin: 0; padding: 0; line-height: 1; font-size: 32rpx; color: #8E9884; }
 .search-explainer { display: flex; align-items: center; gap: 10rpx; margin-top: 16rpx; font-size: 20rpx; color: #8D977E; }
 .tiny-dot { width: 7rpx; height: 7rpx; border-radius: 50%; background: #93A777; }
 .section-title { font-size: 29rpx; }
