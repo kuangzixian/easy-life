@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { createRequire } from 'node:module';
+import { Script } from 'node:vm';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const mini = path.join(root, 'miniprogram');
 const require = createRequire(import.meta.url);
@@ -35,8 +36,21 @@ for (const page of app.pages) {
   assert(definition, `页面没有注册 Page: ${page}`);
   const wxml = fs.readFileSync(path.join(mini, `${page}.wxml`), 'utf8');
   for (const match of wxml.matchAll(/(?:bind|catch)(?::)?(?:tap|input|confirm|change)="([A-Za-z]\w*)"/g)) assert(typeof definition[match[1]] === 'function', `事件未实现: ${page} ${match[1]}`);
-  // 独立解析 XML 检查交给开发者工具；这里检查常见标签配对和表达式括号。
+  // 原生编译仍交给开发者工具；提前检查绑定表达式，避免把 HTML 转义运算符带入 WXML。
   assert((wxml.match(/{{/g) || []).length === (wxml.match(/}}/g) || []).length, `WXML 表达式不完整: ${page}`);
+  for (const match of wxml.matchAll(/{{([\s\S]*?)}}/g)) {
+    const line = wxml.slice(0, match.index).split('\n').length;
+    try {
+      new Script(`(${match[1]})`, { filename: `${page}.wxml:${line}` });
+    } catch (error) {
+      // template 的 data 允许无外层花括号的对象字段与展开表达式。
+      try {
+        new Script(`({${match[1]}})`, { filename: `${page}.wxml:${line}` });
+      } catch {
+        throw new Error(`WXML 表达式语法错误: ${page}.wxml:${line} ${error.message}`);
+      }
+    }
+  }
 }
 for (const item of app.tabBar.list) {
   assert(app.pages.includes(item.pagePath), `tab 页面未注册: ${item.pagePath}`);

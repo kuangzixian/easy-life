@@ -2,13 +2,13 @@
   <view class="nav" style="height: {{navHeight}}px;"><view class="brand-mark"></view><text class="brand">匡子闲学 · 阅读</text></view>
   <view class="library-intro"><view class="eyebrow">A GUIDE TO EVERYDAY LIFE</view><view class="page-heading">慢慢读，闲时学。</view><view class="page-subtitle">{{chapters.length}} 个主题，{{totalCount}} 条建议。按自己的节奏来。</view></view>
   <view class="mode-tabs"><button class="mode-tab {{mode === 'chapters' ? 'selected' : ''}}" data-mode="chapters" bindtap="changeMode">全部章节</button><button class="mode-tab {{mode === 'favorites' ? 'selected' : ''}}" data-mode="favorites" bindtap="changeMode">我的收藏 <text>{{favoriteCount}}</text></button></view>
-  <block wx:if="{{mode === 'chapters' &amp;&amp; !selectedChapter}}">
+  <block wx:if="{{mode === 'chapters' && !selectedChapter}}">
     <view class="directory-search"><text class="search-prefix">⌕</text><input placeholder="找一个感兴趣的主题" placeholder-class="input-placeholder" value="{{filter}}" bindinput="filterChapters" aria-label="筛选章节" /></view>
     <view class="directory-meta"><text>CONTENTS / 生活目录</text><text wx:if="{{readCount}}">已读 {{readCount}} 条</text><text wx:else>从感兴趣的开始</text></view>
     <button wx:for="{{visibleChapters}}" wx:key="id" class="chapter-row" data-id="{{item.id}}" bindtap="chooseChapter"><view class="chapter-number">{{item.displayNumber}}</view><view class="chapter-copy"><view class="chapter-title">{{item.title}}</view><view class="chapter-description">{{item.count}} 条生活建议</view></view><text class="chapter-arrow">↗</text></button>
     <view wx:if="{{!visibleChapters.length}}" class="empty"><view class="empty-symbol">⌕</view><view class="empty-title">还没找到这个主题</view><view class="empty-copy">换一个更简短的关键词试试。</view></view>
   </block>
-  <block wx:elif="{{mode === 'chapters' &amp;&amp; selectedChapter}}">
+  <block wx:elif="{{mode === 'chapters' && selectedChapter}}">
     <button class="back-directory" bindtap="showChapters">← 返回全部章节</button>
     <view class="chapter-cover"><view class="chapter-cover-top"><text>CHAPTER {{selectedChapter.displayNumber}}</text><text>{{entries.length}} 条建议</text></view><view class="chapter-cover-title">{{selectedChapter.title}}</view><view wx:if="{{selectedChapter.descriptionText}}" class="chapter-cover-description">{{selectedChapter.descriptionText}}</view></view>
     <view wx:for="{{entries}}" wx:key="id" class="entry-row tap" bindtap="openEntry" data-id="{{item.id}}" aria-role="button"><view class="entry-meta"><text>建议 {{item.codeLabel}}</text><text wx:if="{{item.read}}">已读 ✓</text><text wx:elif="{{item.favorite}}">已收藏</text></view><view class="entry-title">{{item.title}}</view><view class="entry-summary">{{item.summaryText}}</view><view class="entry-footer"><text wx:if="{{item.evidenceText}}">原文评级 {{item.evidenceText}}</text><text wx:else>查看建议与出处</text><text>阅读全文 ↗</text></view></view>
