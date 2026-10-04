@@ -13,4 +13,6 @@ output/
 .playwright-cli/
 .cache/
 coverage/
+dist/
+.wrangler/
 *.log

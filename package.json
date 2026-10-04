@@ -2,7 +2,7 @@
   "name": "easy-life-miniprogram",
   "version": "0.1.0",
   "private": true,
-  "description": "匡子闲学 — 有出处的生活指南微信小程序",
+  "description": "匡子闲学 — 有出处的生活指南，小程序与手机网页",
   "license": "MIT",
   "engines": { "node": ">=20" },
   "scripts": {
@@ -11,6 +11,8 @@
     "check": "node scripts/check.mjs",
     "verify": "npm run content && npm test && npm run check",
     "preview": "node scripts/preview-server.mjs",
-    "configure": "node scripts/configure.mjs"
+    "configure": "node scripts/configure.mjs",
+    "build:web": "node scripts/build-web.mjs",
+    "web": "node scripts/build-web.mjs && node scripts/web-server.mjs"
   }
 }

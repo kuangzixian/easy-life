@@ -1,0 +1,35 @@
+name: Verify web export
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'web/**'
+      - 'miniprogram/utils/**'
+      - 'miniprogram/data/**'
+      - 'miniprogram/config/release.js'
+      - 'scripts/build-web.mjs'
+      - 'scripts/web-server.mjs'
+      - 'tests/web-build.test.cjs'
+      - 'tests/web-core.test.cjs'
+      - 'package.json'
+      - 'wrangler.jsonc'
+      - '.github/workflows/web-check.yml'
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/web-build.test.cjs tests/web-core.test.cjs
+      - run: node scripts/build-web.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: easy-life-static-web
+          path: dist/
+          retention-days: 7
+          include-hidden-files: true
