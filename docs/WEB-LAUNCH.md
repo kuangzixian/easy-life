@@ -2,7 +2,7 @@
 
 网页版与原生小程序共享内容快照、检索和收藏规则。浏览器界面使用标准 HTML/CSS/JavaScript，支持手机和电脑；无需登录、数据库、服务端代码或模型 API。
 
-截至 2026-10-04：已完成本地开发和验证，尚未购买域名或部署到 Cloudflare。小程序备案与网页托管是不同的流程，不以小程序的备案状态推断网站状态。
+截至 2026-10-05：已通过 Cloudflare Workers Builds 完成首次公开部署，地址为 <https://kuangzi-life.kuangjg1024.workers.dev/>。尚未购买或绑定独立域名；项目所有者反馈手机移动网络无法访问，国内访问问题仍待定位。小程序备案与网页托管是不同的流程，不以小程序的备案状态推断网站状态。
 
 ## 本地运行
 
@@ -53,16 +53,18 @@ Supabase、D1、Redis、Turnstile 和 PostHog 当前都不需要；以后有账�
 
 2026-10-04 Cloudflare 官方标准价：`.cc` 注册 US$8.00/年、续费 US$8.00/年。公开注册局 RDAP 未查到 `kuangzi.cc` 登记；这不保证可注册，也不是该名字的结账报价。购买前在用户账号确认实时状态、是否溢价、税费及最终总价。
 
-由用户在 Cloudflare **Domain Registration / 域名注册 → Register Domains / 注册域名** 搜索 `kuangzi.cc`。注册联系人信息、邮箱验证、支付及注册条款由用户本人填写并确认，不放入仓库或聊天。Cloudflare Registrar 使用 Cloudflare DNS，并默认自动续费，按个人偏好检查该设置。
+若选择 Cloudflare 购买，由用户在 **Domain Registration / 域名注册 → Register Domains / 注册域名** 搜索 `kuangzi.cc`。注册联系人信息、邮箱验证、支付及注册条款由用户本人填写并确认，不放入仓库或聊天。Cloudflare Registrar 使用 Cloudflare DNS，并默认自动续费，按个人偏好检查该设置。
 
 - [官方域名价格](https://pricing.registrar.cloudflare.com/)
 - [注册步骤与条件](https://developers.cloudflare.com/registrar/get-started/register-domain/)
 
 Cloudflare 免费全球网络不包含另购的中国网络服务，不能据此保证大陆手机访问速度；公开部署后再测试不同手机网络。
 
+主要面向中国大陆用户时，建议在境内获工信部批复的注册商（如阿里云中国站或腾讯云）购买域名并完成实名认证，为以后使用境内托管和办理 ICP 备案做好准备。`.cc` 在可备案后缀列表中，但还须满足注册商资质、域名实名认证及持有人与备案主体一致等要求。Cloudflare 等境外注册商注册的域名不能直接用于国内 ICP 备案，需要先转入境内有资质的注册商并完成实名认证，再申请备案。详见[阿里云域名准备与检查](https://help.aliyun.com/zh/icp-filing/basic-icp-service/user-guide/prepare-and-check-the-domain-name)与[腾讯云准备 ICP 备案域名](https://cloud.tencent.com/document/product/243/18905)。
+
 ## 连接 GitHub 自动部署
 
-用户已有 Cloudflare 账号。仓库配置已经准备好，当前不需要 AppSecret、上传密钥或新增应用 Secrets。
+Cloudflare 个人账号已连接 GitHub 的 `kuangzixian/easy-life` 仓库。Cloudflare Builds 使用保存在平台内的部署令牌发布，不把令牌写入源码；当前不需要微信 AppSecret、上传密钥或 GitHub Actions Secrets。
 
 1. Cloudflare → **Workers & Pages → Create application → Import a repository → Get started**。
 2. 连接 GitHub，仅选择 `kuangzixian/easy-life` 仓库。
@@ -72,12 +74,14 @@ Cloudflare 免费全球网络不包含另购的中国网络服务，不能据此
 | --- | --- |
 | Worker name | `kuangzi-life`，必须与 `wrangler.jsonc` 一致 |
 | Production / Git branch | `main` |
-| Build command | `npm run build:web` |
+| Build command | `npm run verify && npm run build:web` |
 | Deploy command | `npx wrangler deploy` |
 | Root directory | 仓库根目录，留空或 `./` |
 | Variables / Secrets | 不需要新增 |
 
 `dist` 已在 `wrangler.jsonc` 的 `assets.directory` 指定。此流程是 Workers Builds，不使用 Pages 的输出目录字段。GitHub Actions 只检查并保存网页构建产物；Cloudflare 连接完成后，Cloudflare 才会自动构建部署新的 main 提交。
+
+上面的 Build command 已在 Cloudflare 后台设置，并在首次构建日志中确认执行。它先执行 `npm run verify`，检查通过后才构建静态文件；检查失败会中止此次 Cloudflare 构建，不进入后续部署。这一步才是 Cloudflare 部署前的检查，GitHub Actions 的绿灯不能证明 Cloudflare 已执行检查或发布成功。
 
 先验证后台生成的 `*.workers.dev` URL。部署成功后，每个提交应检查 Cloudflare 对应构建的成功状态与实际网页，不能把 GitHub 检查通过等同于发布成功。
 
@@ -98,6 +102,8 @@ Cloudflare 自动创建 DNS 和证书。不要提前创建同名 CNAME。HTTPS �
 
 `npm run verify` 覆盖内容、检索、存储、原生页面、网页打包隔离、真实 HTTP 响应和网页安全 URL/深链接解析。构建发布白名单、CSP 和 `no-referrer` 一并配置。
 
-手机尺寸的浏览器检查不代替 iOS Safari、Android Chrome、微信内置浏览器或大陆手机网络的实际测试。当前本地验证不是 Cloudflare 上线，也不是域名注册成功。
+手机尺寸的浏览器检查不代替 iOS Safari、Android Chrome、微信内置浏览器或大陆手机网络的实际测试。Cloudflare 部署成功也不代表域名注册成功或所有地区均能访问。
+
+2026-10-05 首次部署记录：`main` 提交 `4187a6a`，Cloudflare Build `37858a53-7a6e-4a1b-884d-304e2cc12d2b` 成功，36 项测试通过，Worker Version `b71ecbbc-cf41-4a91-a2c6-60c2fd1eecb1`。线上首页、`app.js`、`styles.css`、`bundle.js` 返回 200，未找到路径返回自定义 404；五项响应内容与本地构建的 SHA256 一致，CSP 等响应头已生效。Chrome 已实际渲染首页与卡片；这不能替代国内运营商网络测试。项目所有者反馈手机流量下浏览器报错、超时或无法连接，尚不能据此区分默认域名和跨境网络等原因。
 
 本次本地检查：375×812、390×844 与桌面宽度；首页、34 章目录、空结果恢复、问句检索、收藏刷新保持、文章原文链接、复制分享链接、卡片指针滑动与末张边界、主题换组、多个标签页的阅读进度刷新。页面没有浏览器控制台错误，检查页面无横向溢出。系统原生分享面板与触屏真机手势仍需手机验收。
