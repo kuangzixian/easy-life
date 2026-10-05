@@ -23,9 +23,10 @@
 - 2026-10-05 网页版已在旧默认地址完成首次公开部署，Cloudflare Workers Builds 已连接 GitHub `main`，平台端的检查、构建与首次部署通过。旧地址线上主资源与本地构建逐字节一致，自定义 404 和 CSP 等响应头有效。
 - 同日将 Cloudflare Worker 改名为 `easy-life`、账号子域改为 `kznb`，新地址 <https://easy-life.kznb.workers.dev/> 的四项主资源返回 HTTP 200，SHA256 与当前本地 `dist/` 一致；Chrome 成功渲染 `/#cards` 卡片页并通过下一张卡交互检查。GitHub 仓库、`main` 分支和检查、构建、部署命令保留；本地 `npm run verify && npm run build:web` 再次通过，包含 36 项测试。换网址后，旧网址的浏览器收藏与已读记录不会自动迁移。
 
+- 改名后的 `main` 提交 `5e63ce6` 已触发并通过 Cloudflare 自动构建与发布（Build `3b885275-87ad-4916-8d5b-4f62f9f3bd2e`，Worker Version `8eaf2347-1c2b-4431-acfc-31ddc590192e`）；36 项测试及 GitHub verify、build 检查通过。
+
 ## 尚未验证或执行
 
-- 改名后由新提交触发的 Git 自动发布。
 - 网页独立域名注册与绑定，以及新地址的国内手机网络访问稳定性；此前项目所有者反馈手机流量无法打开默认网址，仍需真机验证。
 - 后台将 0.1.0 设为体验版、添加体验成员及成员实际访问；工具未在上传成功界面单独显示最终上传包大小。
 - iOS / Android 微信真机，原生分享和剪贴板接口实际表现。
