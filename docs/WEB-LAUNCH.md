@@ -2,7 +2,7 @@
 
 网页版与原生小程序共享内容快照、检索和收藏规则。浏览器界面使用标准 HTML/CSS/JavaScript，支持手机和电脑；无需登录、数据库、服务端代码或模型 API。
 
-截至 2026-10-05：已通过 Cloudflare Workers Builds 完成首次公开部署，地址为 <https://kuangzi-life.kuangjg1024.workers.dev/>。尚未购买或绑定独立域名；项目所有者反馈手机移动网络无法访问，国内访问问题仍待定位。小程序备案与网页托管是不同的流程，不以小程序的备案状态推断网站状态。
+截至 2026-10-05：已通过 Cloudflare Workers Builds 完成首次公开部署，默认地址已调整为 <https://easy-life.kznb.workers.dev/>；新地址 HTTP 200，Chrome 已成功渲染 `/#cards` 卡片页。尚未购买或绑定独立域名；此前项目所有者反馈手机移动网络无法访问，新地址的国内手机网络访问仍需真机验证。小程序备案与网页托管是不同的流程，不以小程序的备案状态推断网站状态。
 
 ## 本地运行
 
@@ -72,7 +72,7 @@ Cloudflare 个人账号已连接 GitHub 的 `kuangzixian/easy-life` 仓库。Clo
 
 | 配置 | 值 |
 | --- | --- |
-| Worker name | `kuangzi-life`，必须与 `wrangler.jsonc` 一致 |
+| Worker name | `easy-life`，必须与 `wrangler.jsonc` 一致 |
 | Production / Git branch | `main` |
 | Build command | `npm run verify && npm run build:web` |
 | Deploy command | `npx wrangler deploy` |
@@ -80,6 +80,8 @@ Cloudflare 个人账号已连接 GitHub 的 `kuangzixian/easy-life` 仓库。Clo
 | Variables / Secrets | 不需要新增 |
 
 `dist` 已在 `wrangler.jsonc` 的 `assets.directory` 指定。此流程是 Workers Builds，不使用 Pages 的输出目录字段。GitHub Actions 只检查并保存网页构建产物；Cloudflare 连接完成后，Cloudflare 才会自动构建部署新的 main 提交。
+
+当前默认地址为 <https://easy-life.kznb.workers.dev/>。Cloudflare 后台的 Worker 已改名为 `easy-life`，账号的 workers.dev 子域已改为 `kznb`，与本地 Worker 配置一致。GitHub 仓库 `kuangzixian/easy-life`、`main` 分支及上表中的构建和部署命令均已保留；改名后由新提交触发的 Git 自动发布仍需单独验证。文章路由保持 `/#read/3-1` 等形式；更换网址后，旧网址的浏览器收藏与已读记录不会自动迁移。
 
 上面的 Build command 已在 Cloudflare 后台设置，并在首次构建日志中确认执行。它先执行 `npm run verify`，检查通过后才构建静态文件；检查失败会中止此次 Cloudflare 构建，不进入后续部署。这一步才是 Cloudflare 部署前的检查，GitHub Actions 的绿灯不能证明 Cloudflare 已执行检查或发布成功。
 
@@ -92,7 +94,7 @@ Cloudflare 个人账号已连接 GitHub 的 `kuangzixian/easy-life` 仓库。Clo
 
 域名注册完成且 Cloudflare zone 为 Active 后：
 
-**Workers & Pages → kuangzi-life → Settings → Domains & Routes → Add → Custom Domain → life.kuangzi.cc → Add Custom Domain**。
+**Workers & Pages → easy-life → Settings → Domains & Routes → Add → Custom Domain → life.kuangzi.cc → Add Custom Domain**。
 
 Cloudflare 自动创建 DNS 和证书。不要提前创建同名 CNAME。HTTPS 生效后，验证首页、直接打开/刷新 `/#read/3-1`、分享链接、收藏、搜索和不存在路径的 HTTP 404。
 
@@ -104,6 +106,8 @@ Cloudflare 自动创建 DNS 和证书。不要提前创建同名 CNAME。HTTPS �
 
 手机尺寸的浏览器检查不代替 iOS Safari、Android Chrome、微信内置浏览器或大陆手机网络的实际测试。Cloudflare 部署成功也不代表域名注册成功或所有地区均能访问。
 
-2026-10-05 首次部署记录：`main` 提交 `4187a6a`，Cloudflare Build `37858a53-7a6e-4a1b-884d-304e2cc12d2b` 成功，36 项测试通过，Worker Version `b71ecbbc-cf41-4a91-a2c6-60c2fd1eecb1`。线上首页、`app.js`、`styles.css`、`bundle.js` 返回 200，未找到路径返回自定义 404；五项响应内容与本地构建的 SHA256 一致，CSP 等响应头已生效。Chrome 已实际渲染首页与卡片；这不能替代国内运营商网络测试。项目所有者反馈手机流量下浏览器报错、超时或无法连接，尚不能据此区分默认域名和跨境网络等原因。
+2026-10-05 首次部署记录（旧默认地址）：`main` 提交 `4187a6a`，Cloudflare Build `37858a53-7a6e-4a1b-884d-304e2cc12d2b` 成功，36 项测试通过，Worker Version `b71ecbbc-cf41-4a91-a2c6-60c2fd1eecb1`。线上首页、`app.js`、`styles.css`、`bundle.js` 返回 200，未找到路径返回自定义 404；五项响应内容与本地构建的 SHA256 一致，CSP 等响应头已生效。Chrome 已实际渲染首页与卡片。项目所有者反馈手机流量下浏览器报错、超时或无法连接，尚不能据此区分默认域名和跨境网络等原因。
+
+同日完成 Worker 与账号子域改名后，新地址 <https://easy-life.kznb.workers.dev/> 的 `index.html`、`app.js`、`styles.css`、`bundle.js` 均返回 HTTP 200，SHA256 与当前本地 `dist/` 完全一致。Chrome 成功渲染 `/#cards` 卡片内容，并通过下一张卡交互检查；本地再次执行 `npm run verify && npm run build:web` 通过，包含 36 项测试。此记录确认新地址已上线；改名后的 Git 自动发布和国内手机网络访问仍需分别验证。
 
 本次本地检查：375×812、390×844 与桌面宽度；首页、34 章目录、空结果恢复、问句检索、收藏刷新保持、文章原文链接、复制分享链接、卡片指针滑动与末张边界、主题换组、多个标签页的阅读进度刷新。页面没有浏览器控制台错误，检查页面无横向溢出。系统原生分享面板与触屏真机手势仍需手机验收。
