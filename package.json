@@ -2,7 +2,7 @@
   "name": "easy-life-miniprogram",
   "version": "0.1.0",
   "private": true,
-  "description": "匡子闲学 — 有出处的生活指南，小程序与手机网页",
+  "description": "有出处的生活指南 — 好好生活网页版与匡子闲学微信小程序",
   "license": "MIT",
   "engines": { "node": ">=20" },
   "scripts": {

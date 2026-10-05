@@ -70,7 +70,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error('PORT must be between 1 and 65535.');
     const server = createWebServer();
     server.on('error', (error) => { console.error(`Web server failed: ${error.message}`); process.exitCode = 1; });
-    server.listen(port, host, () => console.log(`匡子闲学网页版：http://${host}:${port}/\n仅提供 dist/ 中的公开静态文件。Ctrl+C 结束。`));
+    server.listen(port, host, () => console.log(`好好生活网页版：http://${host}:${port}/\n仅提供 dist/ 中的公开静态文件。Ctrl+C 结束。`));
   } catch (error) {
     console.error(`Web server failed: ${error.message}`);
     process.exitCode = 1;

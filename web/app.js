@@ -155,7 +155,7 @@
   function deckHTML() {
     const entry = cards[cardIndex];
     if (!entry) return empty('这个主题暂时没有卡片', '换个主题看看。', '去慢慢读');
-    return `<div class="advice-card" id="advice-card" tabindex="0" aria-label="灵感卡 ${cardIndex + 1}，共 ${cards.length} 张"><div class="card-top"><span class="eyebrow">${e(entry.chapterTitle)}</span><span class="card-counter">${String(cardIndex + 1).padStart(2, '0')} / ${String(cards.length).padStart(2, '0')}</span></div><div class="card-motif" aria-hidden="true">✳</div><h2>${e(entry.title)}</h2><p class="card-summary">${e(text(entry.summary))}</p><div class="card-bottom"><span>一张卡，一个小改变</span><span>匡子闲学</span></div></div>
+    return `<div class="advice-card" id="advice-card" tabindex="0" aria-label="灵感卡 ${cardIndex + 1}，共 ${cards.length} 张"><div class="card-top"><span class="eyebrow">${e(entry.chapterTitle)}</span><span class="card-counter">${String(cardIndex + 1).padStart(2, '0')} / ${String(cards.length).padStart(2, '0')}</span></div><div class="card-motif" aria-hidden="true">✳</div><h2>${e(entry.title)}</h2><p class="card-summary">${e(text(entry.summary))}</p><div class="card-bottom"><span>一张卡，一个小改变</span><span>好好生活</span></div></div>
       <div class="deck-controls"><button type="button" class="icon-button" data-action="previous-card" aria-label="上一张卡" ${cardIndex === 0 ? 'disabled' : ''}>${icon('back')}</button><div class="deck-dots" role="group" aria-label="选择卡片">${cards.map((_, index) => `<button type="button" data-action="choose-card" data-index="${index}" aria-label="第 ${index + 1} 张卡" ${index === cardIndex ? 'aria-current="true"' : ''}></button>`).join('')}</div><button type="button" class="icon-button" data-action="next-card" aria-label="下一张卡" ${cardIndex === cards.length - 1 ? 'disabled' : ''}>${icon('arrow')}</button></div><div class="card-actions">${favoriteButton(entry)}<a class="button primary" href="${entryLink(entry.id)}">读完整建议 ${icon('arrow')}</a></div><p class="card-note">想了解成本、限定条件和研究出处，点开完整建议。</p><div class="deck-footer"><p class="deck-caption">左右滑动，或用箭头切换。<br>每组最多 5 张日常建议。</p><button type="button" class="button secondary" data-action="draw-cards">${icon('refresh')} 换一组灵感</button></div>`;
   }
   function changeCard(index) {
@@ -220,7 +220,7 @@
   }
   function aboutPage() {
     const progress = store.getProgress();
-    return `<div class="about-layout">${heading('ABOUT THIS LITTLE PLACE', '匡子闲学', '把有出处的生活建议装进口袋。')}
+    return `<div class="about-layout">${heading('ABOUT THIS LITTLE PLACE', '好好生活', '把有出处的生活建议装进口袋。')}
       <section class="about-panel"><h2>内容从哪里来</h2><p>原作品：《${e(meta.title)}》<br>作者：${e(meta.author)}</p><p>${external(meta.repository, 'HowToLiveBetter 原项目 ↗')}<br>${external(meta.licenseUrl, `${e(meta.license)} 许可 ↗`)}</p><p>这是独立改编的阅读工具。本站整理了字段、引文链接和排版，并新增检索、卡片与收藏；没有声称得到原作者背书。第 1 章第 5 条的蘑菇中毒处置备注有明确标注的安全修订，原始快照保留在项目仓库。</p><dl class="about-facts"><div><dt>内容快照</dt><dd>${e(String(meta.updatedAt).slice(0, 10))}</dd></div><div><dt>固定版本</dt><dd>${external(meta.repository + '/tree/' + meta.commit, e(meta.commit.slice(0, 7)))}</dd></div><div><dt>章节与建议</dt><dd>${meta.totalChapters} 章 / ${meta.totalEntries} 条</dd></div></dl><p>内容不自动追踪法规或医学更新。原文证据评级沿用作者口径，未经本站独立认证。遇到医疗、法律或财务决策，请核对最新权威资料并咨询专业人士。</p></section>
       <section class="about-panel"><h2>你的数据留在哪里</h2><p>不用登录。收藏和阅读进度保存在当前浏览器，不会发送到本站服务器，也不会跨设备同步。清理浏览器数据或更换域名后，原来的记录不会自动出现。</p><p>搜索在浏览器中完成，搜索词不写入网址，不上传或记录。本站没有广告、产品埋点或第三方统计脚本。托管服务仍会按其规则处理常规网页访问请求；点击资料来源会访问相应的外部网站。</p><div class="data-actions"><span>${store.getFavorites().length} 条收藏 · ${progress.readIds.length} 条已读</span><button type="button" class="button secondary" data-action="clear-data">清除本浏览器数据</button></div></section>
       <section class="about-panel"><h2>一起把它做得更好</h2><p>发现错字、过时信息或不好用的地方，欢迎在项目仓库提出。本站代码使用 MIT 许可，内容遵循原作品的 CC BY 4.0 许可。</p><p>${external('https://github.com/kuangzixian/easy-life', '查看本站代码 ↗')}<br>${external('https://github.com/kuangzixian/easy-life/issues', '反馈问题 ↗')}</p><p class="version-note">网页版 ${e(release.version)}${release.operator ? ` · ${e(release.operator)}` : ''}</p>${release.contact ? `<p>联系：${e(release.contact)}</p>` : ''}</section></div>`;
@@ -244,7 +244,7 @@
       default: page = notFoundPage();
     }
     main.innerHTML = page;
-    document.title = `${route.page === 'read' && content.getEntry(route.id) ? content.getEntry(route.id).title : titles[route.page] || '页面未找到'} · 匡子闲学`;
+    document.title = `${route.page === 'read' && content.getEntry(route.id) ? content.getEntry(route.id).title : titles[route.page] || '页面未找到'} · 好好生活`;
     if (route.page === 'cards') bindCardGestures();
     window.scrollTo(0, restore ? scrollPositions.get(activeHash) || 0 : 0);
     if (focus) main.focus({ preventScroll: true });
@@ -254,7 +254,7 @@
     if (!entry) return;
     const url = new URL(location.href);
     url.hash = entryLink(id).slice(1);
-    return { title: `${entry.title} · 匡子闲学`, text: '一条有出处的生活建议', url: url.href };
+    return { title: `${entry.title} · 好好生活`, text: '一条有出处的生活建议', url: url.href };
   }
   async function shareEntry(id) {
     const data = entryShareData(id);
